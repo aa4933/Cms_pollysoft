@@ -1,18 +1,9 @@
-Yii 2 Basic Project Template
+基于Yii 2 Basic Project Template/LeanCloud php sdk
 ============================
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
+这个项目基于开源框架Yii2建立，引入leancloud php sdk拓展，用途是用于公司的后台管理，版本为V1.0初代版本，去除leancloud数据库信息，仅作为初代古董demo样本保存，纪念第一次独立开发
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
-
-DIRECTORY STRUCTURE
+Yii2目录（引用自基础模版MD）
 -------------------
 
       assets/             contains assets definition
@@ -29,21 +20,19 @@ DIRECTORY STRUCTURE
 
 
 
-REQUIREMENTS
+要求
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 5.4.0.
+最低PHP版本为5.4.0
 
 
-INSTALLATION
+关于安装
 ------------
 
-### Install from an Archive File
+### 必须修改的文件
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
 
-Set cookie validation key in `config/web.php` file to some random secret string:
+设置cookie KEY 在 `config/web.php` 下的以下配置点
 
 ```php
 'request' => [
@@ -52,39 +41,25 @@ Set cookie validation key in `config/web.php` file to some random secret string:
 ],
 ```
 
-You can then access the application through the following URL:
+你可以通过使用wampserver用以下路由访问
 
 ~~~
 http://localhost/basic/web/
 ~~~
 
 
-### Install via Composer
+### 使用composer安装《建议使用此方法安装拓展package》
 
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
-
-You can then install this project template using the following command:
-
-~~~
-php composer.phar global require "fxp/composer-asset-plugin:~1.1.1"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
-~~~
-
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/basic/web/
-~~~
+如果没有 [Composer](http://getcomposer.org/)你可以通过以下地址获取
+在 [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 
-CONFIGURATION
+其他配置
 -------------
 
-### Database
+### 数据库
 
-Edit the file `config/db.php` with real data, for example:
+目录在 `config/db.php` 
 
 ```php
 return [
@@ -96,7 +71,8 @@ return [
 ];
 ```
 
-**NOTES:**
-- Yii won't create the database for you, this has to be done manually before you can access it.
-- Check and edit the other files in the `config/` directory to customize your application as required.
-- Refer to the README in the `tests` directory for information specific to basic application tests.
+**后记**
+- 由于采用的是leancloud远程的方式进行云存储，一般此项目是不需要数据库的
+- 另外此项目有很多并没有写在`config/`目录下，不符合项目开发高内聚低耦合的特殊性，所以项目总体青涩 
+- 本项目作为初代版本，仅仅为了纪念第一次开发上传至github，并不代表项目可以完全驾驭各种场景
+- 感谢Yii2的框架学习与认识，让我见识到了很多成熟的开发模式，同时也发现了我个人的不足
